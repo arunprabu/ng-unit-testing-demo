@@ -1,0 +1,95 @@
+SDLC
+---
+  calc
+  ---
+    function add(a: number, b: number): number {
+      return a + b;
+    }
+
+    add(10, 20); // 30 
+
+
+
+    add(10, "20"); // bug #1 
+    add("^^^^", "45"); // bug #2
+    add("ABC", 1); // bug #3
+
+
+
+
+Analysing 
+  Design 
+    Development 
+      Testing 
+
+
+
+Dev => QA => (bugs 5) => Dev => QA => (bugs 2) => Dev => QA => (bugs 0) => QC Passed 
+
+
+    
+Modern Software Dev Methodology as of 2025  / Testing Approach 
+---
+  1. Test Driven Development (TDD)
+      * is a programming practice that instructs devs to write NEW CODE only if an automated test has failed 
+
+      devs write test cases => (Instant feedback of failure) => devs write functionality => (Instant feedback of success)  => [CODE COMPLETE]
+      
+      Testing Pattern: AAA (Arrange, Act, Assert)
+      Tools: JEST, Mocha and Chai 
+
+  2. Behaviour Driven Development (BDD)  
+      * is an agile s/w dev methodology 
+      * an app documented and designed around the behaviour, the user expects to experience 
+      when interacting with it 
+
+      devs write test cases => (Instant feedback of failure) => devs write functionality => (Instant feedback of success)  => [CODE COMPLETE]
+      Testing Pattern: Given, When, Then 
+      Tools: JasmineJS, Karma (Runner)
+
+  Dev's write test cases => Dev's write the functionality => (Tools) => [Instant Feedback of Success] => Deployment
+
+
+Automated Testing 
+---
+  0. Static Type Checking 
+      Tools: TypeScript / FlowJS / PropTypes in ReactJS 
+
+  1. Unit Testing 
+      * Testing small unit of a component 
+      * Testing the comp in isolation (without connecting with REST API)
+      * Individual units of the component would be tested 
+      * Bug Reduction Density: 40 - 80%
+
+      Tools: Jasmine JS(Framework) & Karma (Test Runner)
+
+  2. Integration Testing 
+      * Different units, modules or components tested as combined entity
+      * Behaviour of the app woule be tested 
+      * To expose issues in the integration of multiple units 
+      
+      Examples: test if a child comp can update the parent comp 
+
+      Tools: Jasmine JS & Karma 
+      
+  3. End to End Testing (E2E)
+      * Testing the whole app 
+      * Usaully a multiple step test combining multiple units and integration tests into one big test 
+      * Usually mocked or stubbed very little 
+      * Tests are done in a simulated browser, there may be or may not be an UI while the test is running 
+      * Examples: Testing the complete authentication flow 
+      
+      Tools: Protractor or CypressJS or Selenium or Puppeteer  
+
+
+// How to write the test cases ?
+// Where to write test cases? 
+// How to test our app against the test cased we wrote? 
+
+
+Refer: for Mocking service 
+https://github.com/arunprabu/unit-testing-ng-june2022/blob/master/src/app/todos/todos.component.spec.ts
+
+for Forms 
+https://github.com/arunprabu/unit-testing-ng-june2022/blob/master/src/app/contact/contact.component.spec.ts
+
